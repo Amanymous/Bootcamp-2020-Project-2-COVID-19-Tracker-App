@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import InfoPanel from './component/InfoPanel';
-import Navbar from './component/nav';
+import NavBar from './component/nav';
 import FootNav from './component/FootNav';
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
+      <NavBar />
       <InfoPanel currentScreen={screenConfig[0]} />
       <FootNav screenConfig={screenConfig} />
     </div>

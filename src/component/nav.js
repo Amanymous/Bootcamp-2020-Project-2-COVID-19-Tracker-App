@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Navbar() {
+export default function NavBar() {
   const classes = useStyles();
 
   return (
@@ -69,14 +69,14 @@ export default function Navbar() {
       <AppBar position="static">
         <Toolbar>
           <Typography className={classes.title} variant="h6" noWrap>
-            COVID-19 Tracker
+            Convid19-Tracker
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Enter Your Country…"
+              placeholder="Enter Country…"
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
