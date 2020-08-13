@@ -14,10 +14,15 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
+  title: {
+    color: 'purple',
+    textTransform: 'uppercase',
+  },
 }));
 
-export default function InfoPanel() {
+export default function InfoPanel({ currentScreen }) {
   const [globalData, setGlobalData] = useState({});
+  console.log(currentScreen);
   useEffect(() => {
     async function getData() {
       const response = await fetch(
@@ -40,7 +45,7 @@ export default function InfoPanel() {
           return (
             <Grid item xs={12} sm={4} key={index}>
               <Paper className={classes.paper} elevation={3}>
-                <h3>{val.replace(/_/g, ' ').toUpperCase()}</h3>
+                <h3 className={classes.title}>{val.replace(/_/g, ' ')}</h3>
                 <h3>{globalData[val]}</h3>
               </Paper>
             </Grid>
