@@ -66,3 +66,14 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+for CI/CD
+npm install -g yarn
+yarn build
+npm install --global surge
+surge ./build
+Covid-19-tracker-aman.surge.sh
+
+cd build
+
+surge token 0ef6d72d174f66164b4b3d6e9ebce687
