@@ -1,19 +1,26 @@
 import React from 'react';
-import './App.css';
-import InfoPanel from './component/InfoPanel';
-import NavBar from './component/nav';
-import FootNav from './component/FootNav';
+import styles from './App.module.css';
+import { fetchData } from './Api';
+import { Cards, Chart, CountryPicker } from './components';
 
-function App() {
-  const screenConfig = React.useState(0);
-
-  return (
-    <div className="App">
-      <NavBar />
-      <InfoPanel currentScreen={screenConfig[0]} />
-      <FootNav screenConfig={screenConfig} />
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    data: {},
+  };
+  async componentDidMount() {
+    const fetchDatas = await fetchData();
+    this.setState({ data: fetchDatas });
+  }
+  render() {
+    const { data } = this.state;
+    return (
+      <div className={styles.container}>
+        <Cards data={this.state.data} />
+        <Chart />
+        <CountryPicker />
+      </div>
+    );
+  }
 }
 
 export default App;
